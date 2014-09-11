@@ -29,6 +29,7 @@
   <dt><strong><%= model_class.human_attribute_name(:group_id) %>:</strong></dt>
   <dd><%= @oper.group_id %></dd>
 </dl>
-
-<%= link_to t('.Editar'),edit_oper_path(oper), :class => 'btn btn-primary' %> |
+<% if can? :upadte, @oper %>
+ <%= link_to t('.Editar'),edit_oper_path(oper), :class => 'btn btn-primary' %>
+<% end %>  |
 <%= link_to t('.Atras'),oper_path(oper), :class => 'btn btn-primary'

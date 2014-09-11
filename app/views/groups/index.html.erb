@@ -18,6 +18,7 @@
         <td><%= group.number %></td>
         <td><%= group.name %></td>
         <td>
+        <%= link_to 'Ver', @instructor %>
           <% if can? :update, @group %>
           <%= link_to t('.Editar'),
                       edit_group_path(group), :class => 'btn btn-default btn-xs' %>
@@ -34,7 +35,8 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.nuevo'),
-            new_group_path,
-            :class => 'btn btn-primary' %>
+<% if can? :new, @group %>
+  <%= link_to t('.nuevo'),
+              new_group_path,
+              :class => 'btn btn-primary' %>
+<% end %>
