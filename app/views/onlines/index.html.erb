@@ -17,8 +17,12 @@
         <td><%= online.number_machines %></td>
         <td><%= online.number_operator %></td>
         <td><%= link_to 'Ver', online %></td>
+        <% if can? :update, @group %>
         <td><%= link_to 'Editar', edit_online_path(online) %></td>
+         <% end %>
+          <% if can? :destroy, @group %>
         <td><%= link_to 'Eliminar', online, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>

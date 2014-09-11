@@ -1,4 +1,22 @@
 <%# add navigation links to this file %>
 <%# add navigation links to this file %>
-<li><%= link_to "Areas", areas_path %></li>
-<li><%= link_to "Grupos", groups_path %></li>
+<li><%= image_tag "logo_myt.png", class: 'logotipo'%></li>
+<%= link_to 'Inicio', root_path, class: 'navbar-brand' %>
+<li><%= link_to "Acerca de Nosotros", areas_path %></li>
+<li><%= link_to "Contato", areas_path %></li>
+<% if current_user  %>
+	<li><%= link_to "Areas", areas_path %></li>
+	<li><%= link_to "Grupos", groups_path %></li>
+<% end %>    
+
+<div class="ingreso">
+	<% if current_user %>
+	      <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
+	      <% if can? :new, @user %>
+	         <%= link_to "Registrar", new_user_path %>
+	      <% end %>   
+	      <%= link_to "Salir", :logout, method: :get %>
+	 <% else %>
+	      <%= link_to "Ingresar", :login %>
+	<% end %>
+</div>
