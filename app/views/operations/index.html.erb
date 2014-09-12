@@ -24,10 +24,10 @@
         <td><%= image_tag operation.image.url(:thumb) %></td>
         <td><%= operation.area.name %></td>
          <td>
-         <%= link_to 'Ver', @operation %>
+         <%= link_to 'Ver', @operation, :class => 'btn btn-default' %>
            <% if can? :update, @group %>
        <%= link_to t('.Editar'),
-    edit_area_operation_path(@area,operation), :class => 'btn btn-mini' %> 
+    edit_area_operation_path(@area,operation), :class => 'btn btn-success' %> 
     <% end %>
     <% if can? :destroy, @group %>
           <%= link_to t('.Eliminar'),

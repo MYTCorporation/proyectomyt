@@ -18,17 +18,17 @@
         <td><%= group.number %></td>
         <td><%= group.name %></td>
         <td>
-        <%= link_to 'Ver', @instructor %>
+        <%= link_to 'Ver', @instructor, :class => 'btn btn-default' %>
           <% if can? :update, @group %>
           <%= link_to t('.Editar'),
-                      edit_group_path(group), :class => 'btn btn-default btn-xs' %>
+                      edit_group_path(group), :class => 'btn btn-success' %>
           <% end %>
           <% if can? :destroy, @group %>
           <%= link_to t('.Eliminar'),
                       group_path(group),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => 'btn btn-danger' %>
           <% end %>
         </td>
       </tr>
