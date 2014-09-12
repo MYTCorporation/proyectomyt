@@ -12,10 +12,14 @@
 
 <%= link_to t('.Atras'),
               groups_path, :class => 'btn btn-default'  %>
-<%= link_to t('.Editar'),
-              edit_group_path(@group), :class => 'btn btn-default' %>
-<%= link_to t('.Eliminar'),
-              group_path(@group),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+ <% if can? :update, @group %>             
+  <%= link_to t('.Editar'),
+                edit_group_path(@group), :class => 'btn btn-default' %>
+ <% end %>
+ <% if can? :destroy, @group %>               
+  <%= link_to t('.Eliminar'),
+                group_path(@group),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+ <% end %>               

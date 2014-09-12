@@ -26,6 +26,7 @@
   <dd><%= @instructor.online_id %></dd>
 </dl>
 
-
-<%= link_to t('.Editar'),edit_instructor_path(instructor), :class => 'btn btn-primary' %> |
+<% if can? :update, @instructor %> 
+  <%= link_to t('.Editar'),edit_instructor_path(instructor), :class => 'btn btn-primary' %> |
+<% end %>
 <%= link_to t('.Atras'),instructor_path(instructor), :class => 'btn btn-primary'

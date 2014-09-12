@@ -30,6 +30,7 @@
         <td><%= instructor.area.name %></td>
         <td><%= instructor.online_id %></td>
         <td>
+          <%= link_to 'Ver', @instructor %>
           <% if can? :update, @instructor %>
            <%= link_to t('.Editar'),edit_area_instructor_path(@area,instructor), :class => 'btn btn-danger' %>
             <% end %>
@@ -42,11 +43,14 @@
   </tbody>
 </table>
 
-<%= link_to t('.nuevo'),
-            new_area_instructor_path(@area),
-            :class => 'btn btn-primary' %>
-<%= link_to 'Atras' , areas_path , :class => 'btn btn-primary' %>
-<br>
+<% if can? :new, @instructor %>
+  <%= link_to t('.nuevo'),
+              new_area_instructor_path(@area),
+              :class => 'btn btn-primary' %>
+<% end %>               
+  <%= link_to 'Atras' , areas_path , :class => 'btn btn-primary' %>
+  <br>
+  
 
 <%= will_paginate @instructors, renderer: BootstrapPagination::Rails %>
 <br>
