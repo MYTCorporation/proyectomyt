@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905190559) do
+ActiveRecord::Schema.define(version: 20140915162812) do
 
   create_table "__sm_ext_mgmt", force: true do |t|
     t.text "type",  null: false
@@ -103,6 +103,22 @@ ActiveRecord::Schema.define(version: 20140905190559) do
   add_index "opers", ["document_id"], name: "index_opers_on_document_id"
   add_index "opers", ["group_id"], name: "index_opers_on_group_id"
   add_index "opers", ["online_id"], name: "index_opers_on_online_id"
+
+  create_table "proces", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "references", force: true do |t|
+    t.string   "name"
+    t.string   "cant"
+    t.string   "talle"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "userrs", force: true do |t|
     t.string   "name"

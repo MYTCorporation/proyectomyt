@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
   
+  resources :references
+
+  resources :proces
+
   resources :user_sessions
   resources :users
 

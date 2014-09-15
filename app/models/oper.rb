@@ -2,7 +2,8 @@ class Oper < ActiveRecord::Base
   belongs_to :document
   belongs_to :online
   belongs_to :group
-
+  belongs_to :area
+  
   validates :number_document, :presence => true
   validates :name, :presence => true
   validates :last_name, :presence => true

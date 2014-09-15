@@ -9,13 +9,13 @@
       <th><%= model_class.human_attribute_name(:Numero_documento) %></th>
       <th><%= model_class.human_attribute_name(:nombres) %></th>
       <th><%= model_class.human_attribute_name(:apellidos) %></th>
-      <th><%= model_class.human_attribute_name(:lineas_id) %></th>
       <th><%= model_class.human_attribute_name(:direccion) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:telefono) %></th>
       <th><%= model_class.human_attribute_name(:formacion) %></th>
       <th><%= model_class.human_attribute_name(:fecha_inicio) %></th>
       <th><%= model_class.human_attribute_name(:fecha_fin) %></th>
+      <th><%# model_class.human_attribute_name(:area_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,13 +26,13 @@
         <td><%= oper.number_document %></td>
         <td><%= oper.name %></td>
         <td><%= oper.last_name %></td>
-        <td><%= oper.online_id %></td>
         <td><%= oper.direccion %></td>
         <td><%= oper.email %></td>
         <td><%= oper.telephone %></td>
         <td><%= oper.type_formation %></td>
         <td><%= oper.date_home %></td>
         <td><%= oper.date_end %></td>
+        <td><%# oper.area_id %></td>
         <td>
            <% if can? :update, @group %>
            <%= link_to t('.Editar'),edit_group_oper_path(@group,oper), :class => 'btn btn-success' %>

@@ -1,0 +1,10 @@
+<%= simple_form_for @proce, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@proce[:name]) %>
+  <%= f.input :description %>
+  <%= error_span(@proce[:description]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                proces_path, :class => 'btn btn-default' %>
+<% end %>

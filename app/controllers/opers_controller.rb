@@ -70,6 +70,6 @@ class OpersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def oper_params
-      params.require(:oper).permit(:document_id, :number_document, :name, :last_name, :online_id, :direccion, :email, :telephone, :type_formation, :date_home, :date_end, :group_id)
+      params.require(:oper).permit(:document_id, :number_document, :name, :last_name, :area_id, :direccion, :email, :telephone, :type_formation, :date_home, :date_end, :group_id)
     end
 end

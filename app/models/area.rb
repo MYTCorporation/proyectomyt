@@ -1,6 +1,7 @@
 class Area < ActiveRecord::Base
 	has_many :operations
 	has_many :instructors
+	has_many :opers
     #valida que los datos no se puedan repetir
 	validates :name, :presence => true
 	validates :description, :presence => true
